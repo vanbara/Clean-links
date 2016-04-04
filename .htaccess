@@ -1,0 +1,33 @@
+rewriteengine on
+
+Options -MultiViews
+
+RewriteBase /
+RewriteRule ^home profile.php [NC,L]
+RewriteRule ^request/login login.php [NC,L]
+RewriteRule ^documents/([a-zA-Z]+)$ documents.php?Type=$1 [NC,L]
+RewriteRule ^jobs/my_jobs my_jobs.php [NC,L]
+RewriteRule ^pass/forgotten Forget_Password.php [NC,L]
+RewriteRule ^jobs/applicants job_applications.php [NC,L]
+RewriteRule ^search/local search.php [NC,L]
+RewriteRule ^jobs/closed jobs_closed.php [NC,L]
+RewriteRule ^missing/information Missing_Info.php [NC,L]
+RewriteRule ^([0-9a-zA-Z_=]+)$ view_profile.php?P_ID=$1 [NC,L]
+RewriteRule ^messages/all messages.php [NC,L]
+RewriteRule ^messages/([0-9a-zA-Z_=]+)$ messages.php?MID=$1 [NC,L]
+RewriteRule ^search/job/([0-9a-zA-Z_=]+)$ search.php?Job=$1 [NC,L]
+RewriteRule ^groups/main Groups_Menu.php [NC,L]
+RewriteRule ^contacts/all contacts.php [NC,L]
+RewriteRule ^settings/my_settings settings.php [NC,L]
+RewriteRule ^social/settings social.php [NC,L]
+RewriteRule ^settings/([a-zA-Z]+)$ settings.php?Edit=$1 [NC,L]
+RewriteRule ^account/my_account account.php [NC,L]
+RewriteRule ^jobs/post post_job.php [NC,L]
+RewriteRule ^jobs/edit/([0-9a-zA-Z_=]+)$ post_job.php?My_Job=$1 [NC,L]
+RewriteRule ^jobs/applicants/([0-9a-zA-Z_=]+)$ job_applications.php?JID=$1 [NC,L]
+RewriteRule ^search/([a-zA-Z__]+)/([0-9]{4})/([0-9]{2})/([0-9]{1})/([0-9]{3})$ search.php?Suburb=$1&Postcode=$2&Distance=$3&Serid=$4&Page=$5 [NC,L]
+
+
+RewriteRule ^adv_search/([a-zA-Z__]+)/([0-9]{4})/([0-9]{2})/([0-9]{2})/([0-9]{3})/([0-9]{9})/([a-zA-Z__]+)/([0-9]{3})/([0-9]{2})$ search.php?Suburb=$1&Postcode=$2&Distance=$3&Serid=$4&hr_rate=$5&Pre_Arr=$6&Order_Name=$7&Page=$8&Results=$9 [NC,L]
+
+RewriteRule ^services/([a-zA-Z]+)/([a-zA-Z__/]+)$ services.php?PrimID=$1&service=$2 [NC,L]
